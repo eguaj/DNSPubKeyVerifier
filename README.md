@@ -12,7 +12,11 @@ Alice generates an RSA key:
 
     $ openssl genrsa -out private.key 1024
 
-Alice extracts the public key and store it in a DNS TXT record of her domain:
+Alice extracts the public key:
+
+    $ openssl rsa -in private.key -text -pubout
+
+... and stores it in a DNS TXT record of her domain:
 
     $ORIGIN example.net.
     [...]
